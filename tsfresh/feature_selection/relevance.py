@@ -170,7 +170,7 @@ def calculate_relevance_table(X, y, ml_task='auto', n_jobs=defaults.N_PROCESSES,
 
         if not table_const.empty:
             warnings.warn("[test_feature_significance] Constant features: {}"
-                          .format(", ".join(table_const.feature)), RuntimeWarning)
+                          .format(", ".join(map(str, table_const.feature))), RuntimeWarning)
 
         if len(table_const) == len(relevance_table):
             if n_jobs != 0:
